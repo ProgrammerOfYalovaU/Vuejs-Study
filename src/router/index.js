@@ -74,6 +74,13 @@ export default new Router({
             component: lazyLoad('iletisimPage')
 
         },
+        {
+            path: '/product',
+            name: 'ProductPage',
+            component: lazyLoad('ProductPage')
+
+        },
+        
     
             
         

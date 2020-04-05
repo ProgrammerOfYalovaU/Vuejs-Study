@@ -1,12 +1,13 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
 <template>
 <v-app class="app">
     <img class="alert" src="../assets/alert.png">
 <v-row  class="boyut" >
      <v-col class="" cols="2" >
-    <img class="prResim" src="../assets/Aci_Cips.png" > 
-    <b><a class="yaziB" href="#"  v-for="items in 1" :key="items.id"><p>{{productList[0].brand}}</p></a></b>
-    <a class="yaziB" href="#"  v-for="items in 1" :key="items.id"><p>{{productList[0].title}}</p></a>
-    <p class="bosluk" > <img class="buton" src="../assets/Sepet.png" > <img class="buton" src="../assets/favori.png" > 
+   <a href="http://localhost:3030/product"> <img class="prResim" href="http://localhost:3030/product" src="../assets/Aci_Cips.png" > </a>
+    <b><a class="yaziB" href="http://localhost:3030/product"  v-for="items in 1" :key="items.id"><p>{{productList[0].brand}}</p></a></b>
+    <a class="yaziB" href="http://localhost:3030/product"  v-for="items in 1" :key="items.id"><p>{{productList[0].title}}</p></a>
+    <p class="bosluk" >  <img :src="myImage"  @mouseover="myImage = otherImage"/> <img class="buton" src="../assets/favori.png" > 
     <b class="fiyat" href="#"  v-for="items in 1" :key="items.id">{{productList[0].price}}</b></p>
      </v-col>
     
@@ -126,7 +127,9 @@ export default {
   
   data(){
     return{
-       productList:productjson
+       productList:productjson,
+       myImage : "../assets/Sepet.png",
+       otherImage : "../assets/hover1.png"
        
     };
     
